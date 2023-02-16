@@ -12,7 +12,7 @@ if [[ -f student-submission/ListExamples.java ]]; then
     grep -e "# of Tests: " -e "# of Failures" -e "# of Errors" testResults.txt
   else
     echo "Tests failed to compile"
-    exit 
+    exit
   fi
 else
   echo "Incorrect File, please submit the correct file"
