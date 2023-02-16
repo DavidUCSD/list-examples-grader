@@ -5,10 +5,9 @@ git clone $1 student-submission
 echo 'Finished cloning'
 if [[ -f student-submission/ListExamples.java ]]; then
   echo "Student Submission Successful"
-  cp ListExamples.java ./ 
+  cp student-submission/ListExamples.java ./ 
   javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
   if [[ $? -eq 0 ]]; then
-    set +e
     java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > testResults.txt
     grep -e "# of Tests: " -e "# of Failures" -e "# of Errors" testResults.txt
   else
